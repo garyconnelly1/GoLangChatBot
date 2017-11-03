@@ -1,6 +1,9 @@
 // An echo web application.
 // problem sheet 2
 
+//https://github.com/data-representation
+//https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started
+
 // "fmt"
 //"net/http"
 

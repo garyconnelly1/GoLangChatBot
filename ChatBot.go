@@ -6,11 +6,12 @@
 
 // "fmt"
 //"net/http"
+//"html/template"//add html/template package 
 
 package main
 
 import (
-	"html/template"//add html/template package 
+	
 	"net/http"
 
 //	"bytes"
@@ -30,9 +31,9 @@ func requestHandler(w http.ResponseWriter, r *http.Request) {
 func chatHandler(w http.ResponseWriter, r *http.Request) {
 
 	//create and initialise string
-	output		:= "Howya lad"
-	input		:= r.FormValue("chat")
-	previous	:= input
+	//output		:= "Howya lad"
+	//input		:= r.FormValue("chat")
+	//previous	:= input
 	
 //	// checking for chat URL encoded variable
 //	input, err := r.URL.Query()["guess"]
@@ -50,10 +51,10 @@ func chatHandler(w http.ResponseWriter, r *http.Request) {
 	
 		// adding the guess value to the user value
 	//read the contents of chat.html and return a template
-	t, _ := template.ParseFiles("chat.html")
+//	t, _ := template.ParseFiles("chat.html")
 
 	//execute template and pass pointer to myMsg 	struct
-	t.Execute(w, &myMsg{Input:input,Output:output,Previous:previous})
+//	t.Execute(w, &myMsg{Input:input,Output:output,Previous:previous})
 }//chatHandler
 
 func main() {

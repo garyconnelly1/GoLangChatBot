@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
      <!-- Sourcing jquery and ajax -->
-   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -25,6 +25,7 @@
 </nav>
 	<div class="container-fluid">
 		<ul class="list-group">
+      <!--
 			<li class="list-group-item list-group-item-primary text-right"> Please tell me what’s been bothering you.    
 <li class="list-group-item">   Oh, hello, ELIZA.  It’s been a long time.
 <li class="list-group-item list-group-item-primary text-right"> Hi. What seems to be your problem ?  
@@ -57,22 +58,58 @@
 <li class="list-group-item">   I only really feel happy when I’m writing.
 <li class="list-group-item list-group-item-primary text-right"> How long have you been writing ?
 <li class="list-group-item">   Always, but I’ve been writing seriously since I was eighteen.
-<li class="list-group-item list-group-item-primary text-right"> What incident are you thinking of ?
+<li class="list-group-item list-group-item-primary text-right"> What incident are you thinking of ?-->
 
-		</ul>
-	</div>
+<!--
+   <nav class="navbar fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Eliza chat bot</a>
+</nav>
+	<div class="container-fluid">
+		<ul class="list-group">-->
 
-
-
-<div class="fixed-bottom bg-dark p-2">
+  <div class="fixed-bottom bg-dark p-2">
 	<div class="container">
-		<form>
+		<form action="/Chat" method="GET">
 			<div class="form-group">
 				<input type="text" class="form-control" id="userInput" placeholder="Talk to eliza...">
 			</div>
 		</form>
 	</div>
 </div>
+
+
+		</ul>
+	</div>
+
+
+
+
+
+
+<!-- this is the list the conversation items will be added to.-->
+<!--
+        <ul class="list-group" id="conversation"></ul>
+
+      <div id="bottom"></div>
+      
+    <div class="fixed-bottom bg-dark footer">
+        <div class="container input-group-lg">
+          <form> 
+              <input type="text" name="question" class="form-control" id="user-input" placeholder="Talk to Eliza">
+              <small class="form-text text-muted">Don't forget to say hi first!</small>
+          </form>
+      </div>
+    </div>-->
+
+
+
+
+
+
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -81,6 +118,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
      <!--external script.js file-->
-    <!--<script src="ChatBot.js"></script>-->
+    <script src="ChatBot.js"></script>
   </body>
 </html>

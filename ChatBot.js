@@ -1,10 +1,20 @@
 const form = $("#userInput");
-const listItem = $(".list-group-item");
+const listItem = $(".list-group");
 
 //add the keypress function for when the user types an input for eliza to compute
+
+$(document).ready(()=>{
+
 form.keypress(function(event){
+
+    const keyCodes = {
+    ENTER : 13
+}
+
+let keyCode = event.keyCode;
+
     //for enter
-    if(event.keyCode != 13){ 
+    if(event.keyCode !=  keyCodes.ENTER){ 
         return;
     }
 
@@ -13,11 +23,20 @@ form.keypress(function(event){
       const input = form.val();
       form.val(" ");
 
-      //using GET method to get the form value data from the html form
-      $.get('/chat', { value: form.val() } )
-            .done(function (data) {
-              $('listItem').val(data);
-              });
-      
+       listItem.append("<li class='list-group-item list-group-item-success'>"+"User : " + input + "</li>");
 
- });
+      // GET/POST
+    const queryParams = {"userInput" : input }
+    $.get("/Chat", queryParams)
+        .done(function(response){
+            var nextListItem = "<li class='list-group-item list-group-item-info'>"+"ELiza : " + response + "</li>";
+            setTimeout(function(){
+                listItem.append(nextListItem)
+            }, 1000);//set timeout to give wait to response
+        }).fail(function(){
+            var nextListItem = "<li class='list-group-item list-group-item-danger' >Sorry I'm not home right now.</li>";
+            list.append(nenextListItemwItem);
+        });
+});
+ 
+  });

@@ -5,16 +5,21 @@
 //https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started
 
 // "fmt"
+
 //"net/http"
 //"html/template"//add html/template package 
+//	"bytes"
 
 package main
 
 import (
+	"html/template"
+	"fmt"
 	
 	"net/http"
+	
 
-//	"bytes"
+
 )
 	
 type myMsg struct {
@@ -29,6 +34,19 @@ func requestHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func chatHandler(w http.ResponseWriter, r *http.Request) {
+
+	userInput := r.URL.Query().Get("userInput")
+	//reply := eliza.AskEliza(userInput)
+	fmt.Fprintf(w, userInput)
+
+	elizaResponse := "Hello User, how are you?"
+
+	userResponse := r.FormValue("userResponse")
+
+	t, _ := template.ParseFiles("ChatBot.html")
+
+	t.Execute(w, &myMsg{Output: elizaResponse, Input: userResponse})
+	
 
 	//create and initialise string
 	//output		:= "Howya lad"
@@ -62,6 +80,6 @@ func main() {
 	http.HandleFunc("/", requestHandler)
 
 	//handle /chat page
-	http.HandleFunc("/chat", chatHandler)
+	http.HandleFunc("/Chat", chatHandler)
 	http.ListenAndServe(":8080", nil)
 }

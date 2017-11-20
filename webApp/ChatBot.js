@@ -1,5 +1,4 @@
-const form = $("#userInput");
-const listItem = $("#list-group");
+
 
 //add the keypress function for when the user types an input for eliza to compute
 
@@ -12,15 +11,30 @@ const listItem = $("#list-group");
   //  }
 
   function myFunction(){
+      const form = $("#userInput");
+const listItem = $("#list-group");
+
+
        console.log("well lawd");
         event.preventDefault();
-/*
+
           const input = form.val();
+          
         form.val(" ");
 console.log("befor")
+console.log(input)
+        listItem.append("<li class='list-group-item list-group-item-primary text-right'>" + "User : " + input + "</li>");
+        /*
         listItem.append("<li class='list-group-item list-group-item-success'>" + "User : " + input + "</li>");
+        listItem.append("<li class='list-group-item list-group-item-success'>" + "User : " + input + "</li>");
+        listItem.append("<li class='list-group-item list-group-item-success'>" + "User : " + input + "</li>");
+        listItem.append("<li class='list-group-item list-group-item-success'>" + "User : " + input + "</li>");
+        listItem.append("<li class='list-group-item list-group-item-success'>" + "User : " + input + "</li>");
+        listItem.append("<li class='list-group-item list-group-item-success'>" + "User : " + input + "</li>");
+        listItem.append("<li class='list-group-item list-group-item-success'>" + "User : " + input + "</li>");
+        */
         console.log("after")
-
+7/*
         // GET/POST
         const queryParams = {
             "userInput": input
@@ -35,7 +49,8 @@ console.log("befor")
                 var nextListItem = "<li class='list-group-item list-group-item-danger' >Sorry I'm not home right now.</li>";
                 list.append(nextListItem);
             });
-            */
+            
+           */ 
     
   }
 

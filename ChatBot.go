@@ -9,11 +9,12 @@
 //"net/http"
 //"html/template"//add html/template package 
 //	"bytes"
+//"html/template"
 
 package main
 
 import (
-	"html/template"
+	
 	"fmt"
 	
 	"net/http"
@@ -38,7 +39,7 @@ func chatHandler(w http.ResponseWriter, r *http.Request) {
 	userInput := r.URL.Query().Get("userInput")
 	//reply := eliza.AskEliza(userInput)
 	fmt.Fprintf(w, userInput)
-
+/*
 	elizaResponse := "Hello User, how are you?"
 
 	userResponse := r.FormValue("userResponse")
@@ -46,6 +47,7 @@ func chatHandler(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles("ChatBot.html")
 
 	t.Execute(w, &myMsg{Output: elizaResponse, Input: userResponse})
+	*/
 	
 
 	//create and initialise string

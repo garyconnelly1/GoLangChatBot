@@ -18,6 +18,8 @@ import (
 	"fmt"
 	
 	"net/http"
+
+	"./askMe"
 	
 
 
@@ -36,9 +38,9 @@ type myMsg struct {
 //////////////////////////////////////////////////
 func chatHandler(w http.ResponseWriter, r *http.Request) {
 
-	//userInput := r.URL.Query().Get("userInput")
-	//reply := eliza.AskEliza(userInput)
-	response := "hello, tell me about yourself"
+	userInput := r.URL.Query().Get("userInput")
+	response := askMe.ElizaResponse(userInput)
+	//response := "hello, tell me about yourself"
 	fmt.Fprintf(w, response)
 /*
 	elizaResponse := "Hello User, how are you?"

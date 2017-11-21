@@ -34,12 +34,12 @@ console.log(input)
         listItem.append("<li class='list-group-item list-group-item-success'>" + "User : " + input + "</li>");
         */
         console.log("after")
-
+//hehe
         // GET/POST
         const queryParams = {
             "userInput": input
         }
-        $.get("/Chat", queryParams)
+        $.get("/chat", queryParams)
             .done(function(resp) {
                 var nextListItem = "<li class='list-group-item list-group-item-info'>" + "ELiza : " + resp + "</li>";
                 setTimeout(function() {
@@ -47,7 +47,7 @@ console.log(input)
                 }, 1000); //set timeout to give wait to response
             }).fail(function() {
                 var nextListItem = "<li class='list-group-item list-group-item-danger' >Sorry I'm not home right now.</li>";
-                list.append(nextListItem);
+                listItem.append(nextListItem);
             });
             
            

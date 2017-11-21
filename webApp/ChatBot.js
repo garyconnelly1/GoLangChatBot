@@ -34,7 +34,7 @@ console.log(input)
         listItem.append("<li class='list-group-item list-group-item-success'>" + "User : " + input + "</li>");
         */
         console.log("after")
-7/*
+
         // GET/POST
         const queryParams = {
             "userInput": input
@@ -50,7 +50,7 @@ console.log(input)
                 list.append(nextListItem);
             });
             
-           */ 
+           
     
   }
 

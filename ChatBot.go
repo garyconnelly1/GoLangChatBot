@@ -33,7 +33,7 @@ type myMsg struct {
 	//serve the homepage.html file
 //	http.ServeFile(w, r, "ChatBot.html")
 //}
-//////////////////////////////////////////////////////
+//////////////////////////////////////////////////
 func chatHandler(w http.ResponseWriter, r *http.Request) {
 
 	//userInput := r.URL.Query().Get("userInput")

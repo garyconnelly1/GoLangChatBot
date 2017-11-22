@@ -44,6 +44,8 @@ console.log(input)
                 var nextListItem = "<li class='list-group-item list-group-item-info'>" + "ELiza : " + resp + "</li>";
                 setTimeout(function() {
                     listItem.append(nextListItem)
+                    // for the auto fix to the bottom go to https://stackoverflow.com/questions/47425453/html-css-auto-scroll-page-to-bottom
+                     $("html, body").scrollTop($("body").height());
                 }, 1000); //set timeout to give wait to response
             }).fail(function() {
                 var nextListItem = "<li class='list-group-item list-group-item-danger' >Sorry I'm not home right now.</li>";

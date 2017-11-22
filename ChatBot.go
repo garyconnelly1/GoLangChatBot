@@ -31,10 +31,6 @@ type myMsg struct {
 	Previous string
 }
 
-//func requestHandler(w http.ResponseWriter, r *http.Request) {
-	//serve the homepage.html file
-//	http.ServeFile(w, r, "ChatBot.html")
-//}
 //////////////////////////////////////////////////
 func chatHandler(w http.ResponseWriter, r *http.Request) {
 
@@ -42,21 +38,7 @@ func chatHandler(w http.ResponseWriter, r *http.Request) {
 	response := askMe.ElizaResponse(userInput)
 	//response := "hello, tell me about yourself"
 	fmt.Fprintf(w, response)
-/*
-	elizaResponse := "Hello User, how are you?"
 
-	userResponse := r.FormValue("userResponse")
-
-	t, _ := template.ParseFiles("ChatBot.html")
-
-	t.Execute(w, &myMsg{Output: elizaResponse, Input: userResponse})
-	*/
-	
-
-	//create and initialise string
-	//output		:= "Howya lad"
-	//input		:= r.FormValue("chat")
-	//previous	:= input
 	
 
 }//chatHandler
@@ -74,3 +56,32 @@ func main() {
 	http.HandleFunc("/chat", chatHandler)
 	http.ListenAndServe(":8080", nil)
 }
+
+
+
+
+
+/*
+	elizaResponse := "Hello User, how are you?"
+
+	userResponse := r.FormValue("userResponse")
+
+	t, _ := template.ParseFiles("ChatBot.html")
+
+	t.Execute(w, &myMsg{Output: elizaResponse, Input: userResponse})
+	*/
+	
+
+	//create and initialise string
+	//output		:= "Howya lad"
+	//input		:= r.FormValue("chat")
+	//previous	:= input
+
+	/*
+
+*/
+
+//func requestHandler(w http.ResponseWriter, r *http.Request) {
+	//serve the homepage.html file
+//	http.ServeFile(w, r, "ChatBot.html")
+//}

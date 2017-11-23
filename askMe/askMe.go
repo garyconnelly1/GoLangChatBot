@@ -17,6 +17,7 @@ import (
 	"regexp"
 	"math/rand"
 	"strings"
+	"time"
 	
 	
 	
@@ -25,6 +26,8 @@ import (
 func ElizaResponse(inputStr string) string{
 
 	input :=inputStr
+
+	rand.Seed(time.Now().UTC().UnixNano())
 
 	//back ticks instead of quotes to make sure it doesnt leave the characters first
 	//if matched,_ := regexp.MatchString(`(?i). *\bhello\b.*`,input); matched {
@@ -102,6 +105,8 @@ func ElizaResponse(inputStr string) string{
 		"How does that make you feel?",
 		 "Why do you say that?",
 		 "Would you like to hear a joke?",
+		  "How is your day going?",
+		   "Are you a college student like my creator?",
 
 	}
 

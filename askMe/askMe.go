@@ -31,6 +31,21 @@ func ElizaResponse(inputStr string) string{
 
 	//back ticks instead of quotes to make sure it doesnt leave the characters first
 	//if matched,_ := regexp.MatchString(`(?i). *\bhello\b.*`,input); matched {
+
+
+//to attempt reflects
+
+			if strings.Contains(strings.ToLower(input), "your") {
+
+				test := regexp.MustCompile(`your`)
+
+				var reflectsResponse = test.ReplaceAllString(input, "my")
+				return reflectsResponse
+			}
+
+			
+
+
 	if strings.Contains(strings.ToLower(input), "hello"){
 		//return the string below
 		return "Hello friend. What is your name?"
@@ -113,3 +128,38 @@ func ElizaResponse(inputStr string) string{
 	//returning a single string response
 		return answers[rand.Intn(len(answers))]
 }
+
+
+/*
+//adapted from https://gist.github.com/ianmcloughlin/c4c2b8dc586d06943f54b75d9e2250fe
+func refPro(inputStr string) string{
+	boundaries := regexp.MustCompile(`\b`)
+	tokens := boundaries.Split(inputStr, -1)
+	
+	// List the reflections.
+	reflections := [][]string{
+		{`I`, `you`},
+		{`me`, `you`},
+		{`am`, `are`},
+		{`you`, `I`},
+		{`my`, `your`},
+		{`your`, `my`},
+		{`I am`,`you are`},
+	}
+	
+	// Loop through each token, reflecting it if there's a match.
+	for i, token := range tokens {
+		for _, reflection := range reflections {
+			if matched, _ := regexp.MatchString(reflection[0], token); matched {
+				tokens[i] = reflection[1]
+				
+				break
+			}
+		}
+	}
+	
+	// Put the tokens back together.
+	return strings.Join(tokens, ``)
+}
+	//end part 5
+*/

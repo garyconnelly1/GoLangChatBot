@@ -33,8 +33,8 @@ func ElizaResponse(inputStr string) string{
 	//if matched,_ := regexp.MatchString(`(?i). *\bhello\b.*`,input); matched {
 
 
-//to attempt reflects
-
+		
+			//reflecting pronouns
 			if strings.Contains(strings.ToLower(input), "your") {
 
 				test := regexp.MustCompile(`your`)
@@ -42,6 +42,57 @@ func ElizaResponse(inputStr string) string{
 				var reflectsResponse = test.ReplaceAllString(input, "my")
 				return reflectsResponse
 			}
+
+
+			if strings.Contains(strings.ToLower(input), "me") {
+
+				test := regexp.MustCompile(`me`)
+
+				var reflectsResponse = test.ReplaceAllString(input, "you")
+				return reflectsResponse
+			}
+
+
+			if strings.Contains(strings.ToLower(input), "am") {
+
+				test := regexp.MustCompile(`am`)
+
+				var reflectsResponse = test.ReplaceAllString(input, "are")
+				return reflectsResponse
+			}
+
+
+			if strings.Contains(strings.ToLower(input), "you") {
+
+				test := regexp.MustCompile(`you`)
+
+				var reflectsResponse = test.ReplaceAllString(input, "I")
+				return reflectsResponse
+			}
+
+
+			if strings.Contains(strings.ToLower(input), "my") {
+
+				test := regexp.MustCompile(`my`)
+
+				var reflectsResponse = test.ReplaceAllString(input, "your")
+				return reflectsResponse
+			}
+
+
+			if strings.Contains(strings.ToLower(input), "I am") {
+
+				test := regexp.MustCompile(`I am`)
+
+				var reflectsResponse = test.ReplaceAllString(input, "you are")
+				return reflectsResponse
+			}
+
+
+
+
+
+			//ending reflecting pronouns
 
 			
 

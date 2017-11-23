@@ -52,7 +52,7 @@ func ElizaResponse(inputStr string) string{
 				return reflectsResponse
 			}
 
-
+/*
 			if strings.Contains(strings.ToLower(input), "am") {
 
 				test := regexp.MustCompile(`am`)
@@ -60,6 +60,7 @@ func ElizaResponse(inputStr string) string{
 				var reflectsResponse = test.ReplaceAllString(input, "are")
 				return reflectsResponse
 			}
+			/*
 
 
 			if strings.Contains(strings.ToLower(input), "you") {
@@ -79,7 +80,7 @@ func ElizaResponse(inputStr string) string{
 				return reflectsResponse
 			}
 
-
+/*
 			if strings.Contains(strings.ToLower(input), "I am") {
 
 				test := regexp.MustCompile(`I am`)
@@ -87,6 +88,7 @@ func ElizaResponse(inputStr string) string{
 				var reflectsResponse = test.ReplaceAllString(input, "you are")
 				return reflectsResponse
 			}
+			*/
 
 
 
@@ -159,6 +161,17 @@ func ElizaResponse(inputStr string) string{
 		return reLike.ReplaceAllString(input, "Oh nice, why do you like $1?") 
 
 	}
+
+
+	//try to recognise emotions
+	reAngry := regexp.MustCompile("([^.!?]*)(!)")
+	
+
+	if reAngry.MatchString(input){	
+		return "Why are you getting angry?" 
+
+	}
+
 
 	
 

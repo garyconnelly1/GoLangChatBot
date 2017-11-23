@@ -60,7 +60,7 @@ func ElizaResponse(inputStr string) string{
 				var reflectsResponse = test.ReplaceAllString(input, "are")
 				return reflectsResponse
 			}
-			/*
+			*/
 
 
 			if strings.Contains(strings.ToLower(input), "you") {
@@ -174,18 +174,16 @@ func ElizaResponse(inputStr string) string{
 
 
 	
-
-	
-
-	
-
+//default answers if it doesnt recognise the user input
 	answers := []string{
 		"I'm not sure what you are trying to say. Could you explain it to me?",
 		"How does that make you feel?",
-		 "Why do you say that?",
-		 "Would you like to hear a joke?",
-		  "How is your day going?",
-		   "Are you a college student like my creator?",
+		"Why do you say that?",
+		"Would you like to hear a joke?",
+		"How is your day going?",
+		"Are you a college student like my creator?",
+		"What hobbies do you have?",
+		"Do you play any sport?",
 
 	}
 

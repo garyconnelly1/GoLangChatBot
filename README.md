@@ -12,7 +12,9 @@ If your machine does not already have Git and Go installed, they can be installe
  https://git-scm.com/downloads
  
  To clone the repository to your local machine, in command prompt enter
- 
+ ```
+ https://github.com/garyconnelly1/GoLangChatBot.git
+ ```
 
 
 

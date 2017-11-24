@@ -16,7 +16,7 @@ If your machine does not already have Git and Go installed, they can be installe
  https://github.com/garyconnelly1/GoLangChatBot.git
  ```
 ### Step 1:
-Build the ChatBot.go file.
+Build the ChatBot.go file by typing the following into your command line.
 ```
 go build ChatBot.go
 ```

@@ -1,15 +1,11 @@
-// An echo web application.
-// problem sheet 2
+// Gary Connelly
+// The Eliza chatbot project
+// class: Data representation and querying year 3 semester 1
+//Lecturer: Ian Mcloughlin
 
 //https://github.com/data-representation
 //https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started
 
-// "fmt"
-
-//"net/http"
-//"html/template"//add html/template package 
-//	"bytes"
-//"html/template"
 
 package main
 
@@ -31,12 +27,14 @@ type myMsg struct {
 	Previous string
 }
 
-//////////////////////////////////////////////////
+//function to process the user input
 func chatHandler(w http.ResponseWriter, r *http.Request) {
 
+	//get the input from the html form
 	userInput := r.URL.Query().Get("userInput")
+	//send that to the askMe folder for further processing
 	response := askMe.ElizaResponse(userInput)
-	//response := "hello, tell me about yourself"
+	//output the response
 	fmt.Fprintf(w, response)
 
 	
@@ -44,16 +42,17 @@ func chatHandler(w http.ResponseWriter, r *http.Request) {
 }//chatHandler
 
 func main() {
-	// handles root page
-	//http.HandleFunc("/", requestHandler)
-	//serve the files from the /static folder
+	
+	//serve the files from the /webApp folder
 	directory := http.Dir("./webApp")
 	fileServer := http.FileServer(directory)
 
+	// handles root page
 	http.Handle("/", fileServer)
 
 	//handle /chat page
 	http.HandleFunc("/chat", chatHandler)
+	//serve it on port 8080
 	http.ListenAndServe(":8080", nil)
 }
 
@@ -61,27 +60,3 @@ func main() {
 
 
 
-/*
-	elizaResponse := "Hello User, how are you?"
-
-	userResponse := r.FormValue("userResponse")
-
-	t, _ := template.ParseFiles("ChatBot.html")
-
-	t.Execute(w, &myMsg{Output: elizaResponse, Input: userResponse})
-	*/
-	
-
-	//create and initialise string
-	//output		:= "Howya lad"
-	//input		:= r.FormValue("chat")
-	//previous	:= input
-
-	/*
-
-*/
-
-//func requestHandler(w http.ResponseWriter, r *http.Request) {
-	//serve the homepage.html file
-//	http.ServeFile(w, r, "ChatBot.html")
-//}
